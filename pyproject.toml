@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agent-server-card-mcp"
+version = "0.1.0"
+description = "MCP Server for server card generation, validation and discovery — .well-known/mcp-server-card.json protocol"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "AiAgentKarl"}
+]
+keywords = ["mcp", "server-card", "discovery", "well-known", "ai-agent", "model-context-protocol"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries",
+]
+dependencies = [
+    "mcp[cli]>=1.0.0",
+    "httpx>=0.27.0",
+    "jsonschema>=4.20.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/AiAgentKarl/agent-server-card-mcp"
+Repository = "https://github.com/AiAgentKarl/agent-server-card-mcp"
+Issues = "https://github.com/AiAgentKarl/agent-server-card-mcp/issues"
+
+[project.scripts]
+server-card-server = "src.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
